@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{E94D463B-B200-4BEA-B7F6-3EDFBFB918D7}|Default">
+  <MonoDevelop.Ide.ItemProperties.DotzAPI PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="DotzAPI" expanded="True">
+            <Node name="DotzAPI" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="InicioController.cs" selected="True" />
+              </Node>
+              <Node name="Database" expanded="True" />
+              <Node name="Modelos" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Repositorios" expanded="True" />
+              <Node name="Servicos" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
