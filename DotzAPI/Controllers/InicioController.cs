@@ -49,7 +49,7 @@ namespace DotzAPI.Controllers
         public string Anonimo() => "Anônimo!";
 
         [HttpGet]
-        [Route("Autenticado")]
+        [Route("autenticado")]
         [Authorize]
         public string Autenticado() => String.Format("Autenticado! Bem vindo, {0}", User.Identity.Name);
     }

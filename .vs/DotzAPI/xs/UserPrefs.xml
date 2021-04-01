@@ -1,18 +1,27 @@
 ﻿<Properties StartupConfiguration="{E94D463B-B200-4BEA-B7F6-3EDFBFB918D7}|Default">
   <MonoDevelop.Ide.ItemProperties.DotzAPI PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="DotzAPI/Repositorios/RepositorioBase.cs">
+    <Files>
+      <File FileName="DotzAPI/Modelos/Endereco.cs" Line="12" Column="29" />
+      <File FileName="DotzAPI/Servicos/IEnderecoServico.cs" Line="9" Column="86" />
+      <File FileName="DotzAPI/Servicos/EnderecoServico.cs" Line="21" Column="10" />
+      <File FileName="DotzAPI/Servicos/UsuarioServico.cs" Line="20" Column="43" />
+      <File FileName="DotzAPI/Controllers/UsuarioController.cs" Line="35" Column="39" />
+      <File FileName="DotzAPI/Controllers/EnderecoController.cs" Line="28" Column="1" />
+      <File FileName="DotzAPI/Controllers/InicioController.cs" Line="52" Column="31" />
+      <File FileName="DotzAPI/Repositorios/UsuarioRepositorio.cs" Line="1" Column="1" />
+      <File FileName="DotzAPI/Repositorios/RepositorioBase.cs" Line="22" Column="36" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="DotzAPI" expanded="True">
             <Node name="DotzAPI" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="InicioController.cs" selected="True" />
-              </Node>
-              <Node name="Database" expanded="True" />
+              <Node name="Controllers" expanded="True" />
               <Node name="Modelos" expanded="True" />
-              <Node name="Properties" expanded="True" />
-              <Node name="Repositorios" expanded="True" />
+              <Node name="Repositorios" expanded="True">
+                <Node name="RepositorioBase.cs" selected="True" />
+              </Node>
               <Node name="Servicos" expanded="True" />
             </Node>
           </Node>

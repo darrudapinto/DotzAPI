@@ -55,6 +55,8 @@ namespace DotzAPI
             services.AddTransient(typeof(IRepositorioBase<>), typeof(RepositorioBase<>));
             services.AddTransient<IUsuarioRepositorio, UsuarioRepositorio>();
             services.AddTransient<IUsuarioServico, UsuarioServico>();
+            services.AddTransient<IEnderecoRepositorio, EnderecoRepositorio>();
+            services.AddTransient<IEnderecoServico, EnderecoServico>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DotzAPI", Version = "v1" });
