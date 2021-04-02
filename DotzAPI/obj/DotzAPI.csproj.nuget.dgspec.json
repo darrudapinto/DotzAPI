@@ -17,17 +17,13 @@
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/darrudapinto/Projects/DotzAPI/NuGet.Config",
-          "/Users/darrudapinto/.config/NuGet/NuGet.Config"
+          "/Users/darrudapinto/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nugetized.blob.core.windows.net/live-reload/index.json": {},
-          "https://www.myget.org/F/enterprise/api/v3/index.json": {},
-          "https://www.myget.org/F/sixlabors/api/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {

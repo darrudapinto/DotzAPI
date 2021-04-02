@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "w+XOfQqXKRWe2aPT9aGgipIkyyRlDDRAICPDf0aIYzsI1QuPvi7OBlH3Vq74NNQcbKcfdsab/M5mje1DL58JeQ==",
+  "dgSpecHash": "jWK1rao19qrQ82H241sbZ09+IGc0zYXpQssAs33Vbzk/ElOd9iqRBHgyR91fk7ha1smOHZhmlFh4e1oGmdVW3Q==",
   "success": true,
   "projectFilePath": "/Users/darrudapinto/Projects/DotzAPI/DotzAPI/DotzAPI.csproj",
   "expectedPackageFiles": [
@@ -55,17 +55,17 @@
     "/Users/darrudapinto/.nuget/packages/swashbuckle.aspnetcore.swagger/6.1.1/swashbuckle.aspnetcore.swagger.6.1.1.nupkg.sha512",
     "/Users/darrudapinto/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.1.1/swashbuckle.aspnetcore.swaggergen.6.1.1.nupkg.sha512",
     "/Users/darrudapinto/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.1.1/swashbuckle.aspnetcore.swaggerui.6.1.1.nupkg.sha512",
-    "/Users/darrudapinto/.nuget/packages/system.buffers/4.5.0/system.buffers.4.5.0.nupkg.sha512",
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/system.buffers/4.5.0/system.buffers.4.5.0.nupkg.sha512",
     "/Users/darrudapinto/.nuget/packages/system.collections.immutable/5.0.0/system.collections.immutable.5.0.0.nupkg.sha512",
     "/Users/darrudapinto/.nuget/packages/system.componentmodel.annotations/5.0.0/system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "/Users/darrudapinto/.nuget/packages/system.diagnostics.diagnosticsource/5.0.1/system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
     "/Users/darrudapinto/.nuget/packages/system.identitymodel.tokens.jwt/6.7.1/system.identitymodel.tokens.jwt.6.7.1.nupkg.sha512",
-    "/Users/darrudapinto/.nuget/packages/system.security.accesscontrol/4.5.0/system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/system.security.accesscontrol/4.5.0/system.security.accesscontrol.4.5.0.nupkg.sha512",
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512",
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/system.security.cryptography.pkcs/4.5.0/system.security.cryptography.pkcs.4.5.0.nupkg.sha512",
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/system.security.cryptography.xml/4.5.0/system.security.cryptography.xml.4.5.0.nupkg.sha512",
-    "/Users/darrudapinto/.nuget/packages/system.security.permissions/4.5.0/system.security.permissions.4.5.0.nupkg.sha512",
-    "/Users/darrudapinto/.nuget/packages/system.security.principal.windows/4.5.0/system.security.principal.windows.4.5.0.nupkg.sha512",
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/system.security.permissions/4.5.0/system.security.permissions.4.5.0.nupkg.sha512",
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/system.security.principal.windows/4.5.0/system.security.principal.windows.4.5.0.nupkg.sha512",
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512"
   ],
   "logs": []
