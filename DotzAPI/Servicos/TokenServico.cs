@@ -18,7 +18,8 @@ namespace DotzAPI.Servicos
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.Name, usuario.Nome.ToString()),
-                    new Claim(ClaimTypes.Email, usuario.Email.ToString())
+                    new Claim(ClaimTypes.Email, usuario.Email.ToString()),
+                    new Claim("UsuarioId", usuario.Id.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddHours(2),
                 SigningCredentials = new SigningCredentials (

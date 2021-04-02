@@ -8,14 +8,18 @@ namespace DotzAPI.Repositorios
 {
     public class UsuarioRepositorio : RepositorioBase<Usuario>, IUsuarioRepositorio
     {
-        public async Task<Usuario> ObterPorIdAsync(AplicacaoDbContexto contexto, int id)
+        public UsuarioRepositorio(AplicacaoDbContexto contexto) : base (contexto)
         {
-            return await ObterTodos(contexto).FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<List<Usuario>> ObterTodosAsync(AplicacaoDbContexto contexto)
+        public async Task<Usuario> ObterPorIdAsync(int id)
         {
-            return await ObterTodos(contexto).ToListAsync();
+            return await ObterTodos().FirstOrDefaultAsync(x => x.Id == id);
+        }
+
+        public async Task<List<Usuario>> ObterTodosAsync()
+        {
+            return await ObterTodos().ToListAsync();
         }
     }
 }

@@ -7,7 +7,7 @@ namespace DotzAPI.Repositorios
 {
     public interface IUsuarioRepositorio : IRepositorioBase<Usuario>
     {
-        Task<Usuario> ObterPorIdAsync(AplicacaoDbContexto contexto, int id);
-        Task<List<Usuario>> ObterTodosAsync(AplicacaoDbContexto contexto);
+        Task<Usuario> ObterPorIdAsync(int id);
+        Task<List<Usuario>> ObterTodosAsync();
     }
 }

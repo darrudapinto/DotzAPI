@@ -15,9 +15,9 @@ namespace DotzAPI.Servicos
             Repositorio = repositorio;
         }
 
-        public async Task<Endereco> AdicionarAsync(AplicacaoDbContexto contexto, Endereco endereco)
+        public async Task<Endereco> AdicionarAsync(Endereco endereco)
         {
-            return await Repositorio.AdicionarAsync(contexto, endereco);
+            return await Repositorio.AdicionarAsync(endereco);
         }
     }
 }

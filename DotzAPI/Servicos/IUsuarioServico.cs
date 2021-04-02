@@ -7,8 +7,9 @@ namespace DotzAPI.Servicos
 {
     public interface IUsuarioServico
     {
-        Task<List<Usuario>> ObterTodosAsync(AplicacaoDbContexto contexto);
-        Task<Usuario> ObterPorIdAsync(AplicacaoDbContexto contexto, int id);
-        Task<Usuario> AdicionarAsync(AplicacaoDbContexto contexto, Usuario usuario);
+        Task<List<Usuario>> ObterTodosAsync();
+        Task<Usuario> ObterPorIdAsync(int id);
+        Task<Usuario> AdicionarAsync(Usuario usuario);
+        Task<Usuario> AdicionarEnderecoAsync(Endereco endereco, int id);
     }
 }

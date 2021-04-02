@@ -2,16 +2,23 @@
 using System.Linq;
 using System.Threading.Tasks;
 using DotzAPI.Database;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DotzAPI.Repositorios
 {
     public class RepositorioBase<TEntity> : IRepositorioBase<TEntity> where TEntity : class, new()
     {
-        public IQueryable<TEntity> ObterTodos(AplicacaoDbContexto contexto)
+        private readonly AplicacaoDbContexto Contexto;
+        public RepositorioBase([FromServices] AplicacaoDbContexto contexto)
+        {
+            Contexto = contexto;
+        }
+
+        public IQueryable<TEntity> ObterTodos()
         {
             try
             {
-                return contexto.Set<TEntity>();
+                return Contexto.Set<TEntity>();
             }
             catch (Exception ex)
             {
@@ -19,15 +26,15 @@ namespace DotzAPI.Repositorios
             }
         }
 
-        public async Task<TEntity> AdicionarAsync(AplicacaoDbContexto contexto, TEntity entidade)
+        public async Task<TEntity> AdicionarAsync(TEntity entidade)
         {
             if (entidade == null)
                 throw new ArgumentNullException($"{nameof(AdicionarAsync)} entidade não pode ser nula");
 
             try
             {
-                await contexto.AddAsync(entidade);
-                await contexto.SaveChangesAsync();
+                await Contexto.AddAsync(entidade);
+                await Contexto.SaveChangesAsync();
 
                 return entidade;
             }
@@ -37,15 +44,15 @@ namespace DotzAPI.Repositorios
             }
         }
 
-        public async Task<TEntity> AtualizarAsync(AplicacaoDbContexto contexto, TEntity entidade)
+        public async Task<TEntity> AtualizarAsync(TEntity entidade)
         {
             if (entidade == null)
                 throw new ArgumentNullException($"{nameof(AdicionarAsync)} entidade não pode ser nula");
 
             try
             {
-                contexto.Update(entidade);
-                await contexto.SaveChangesAsync();
+                Contexto.Update(entidade);
+                await Contexto.SaveChangesAsync();
 
                 return entidade;
             }

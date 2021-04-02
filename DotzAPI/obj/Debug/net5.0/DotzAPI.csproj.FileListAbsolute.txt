@@ -26,7 +26,6 @@
 /Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
 /Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/System.IdentityModel.Tokens.Jwt.dll
-/Users/darrudapinto/Projects/DotzAPI/DotzAPI/obj/Debug/net5.0/DotzAPI.csprojAssemblyReference.cache
 /Users/darrudapinto/Projects/DotzAPI/DotzAPI/obj/Debug/net5.0/DotzAPI.GeneratedMSBuildEditorConfig.editorconfig
 /Users/darrudapinto/Projects/DotzAPI/DotzAPI/obj/Debug/net5.0/DotzAPI.AssemblyInfoInputs.cache
 /Users/darrudapinto/Projects/DotzAPI/DotzAPI/obj/Debug/net5.0/DotzAPI.AssemblyInfo.cs

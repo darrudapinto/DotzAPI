@@ -9,8 +9,8 @@ namespace DotzAPI.Modelos
         public string Email { get; set; }
         public string Nome { get; set; }
         public string Senha { get; set; }
-        public Endereco Endereco { get; set; }
-        public List<PontoDotz> PontosDotz { get; set; }
+        public virtual Endereco Endereco { get; set; }
+        public virtual ICollection<PontoDotz> PontosDotz { get; set; }
         public int QuantidadePontosDotzAcumulados { get; set; }
 
         public void AtualizarPontosDotzAcumulados(PontoDotz pontoDotz)

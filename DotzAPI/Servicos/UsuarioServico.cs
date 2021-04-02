@@ -15,19 +15,26 @@ namespace DotzAPI.Servicos
             Repositorio = repositorio;
         }
 
-        public async Task<Usuario> AdicionarAsync(AplicacaoDbContexto contexto, Usuario usuario)
+        public async Task<Usuario> AdicionarAsync(Usuario usuario)
         {
-            return await Repositorio.AdicionarAsync(contexto, usuario);
+            return await Repositorio.AdicionarAsync(usuario);
         }
 
-        public async Task<Usuario> ObterPorIdAsync(AplicacaoDbContexto contexto, int id)
+        public async Task<Usuario> AdicionarEnderecoAsync(Endereco endereco, int id)
         {
-            return await Repositorio.ObterPorIdAsync(contexto, id);
+            var usuario = await ObterPorIdAsync(id);
+            usuario.Endereco = endereco;
+            return await Repositorio.AtualizarAsync(usuario);
         }
 
-        public async Task<List<Usuario>> ObterTodosAsync(AplicacaoDbContexto contexto)
+        public async Task<Usuario> ObterPorIdAsync(int id)
         {
-            return await Repositorio.ObterTodosAsync(contexto);
+            return await Repositorio.ObterPorIdAsync(id);
+        }
+
+        public async Task<List<Usuario>> ObterTodosAsync()
+        {
+            return await Repositorio.ObterTodosAsync();
         }
     }
 }

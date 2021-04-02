@@ -6,6 +6,6 @@ namespace DotzAPI.Servicos
 {
     public interface IEnderecoServico
     {
-        Task<Endereco> AdicionarAsync(AplicacaoDbContexto contexto, Endereco endereco);
+        Task<Endereco> AdicionarAsync(Endereco endereco);
     }
 }

@@ -21,12 +21,12 @@ namespace DotzAPI.Controllers
         [HttpPost]
         [Route("adicionar")]
         [Authorize]
-        public async Task<ActionResult<Endereco>> Post([FromServices] AplicacaoDbContexto contexto, [FromBody] Endereco endereco)
+        public async Task<ActionResult<Endereco>> Post([FromBody] Endereco endereco)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            return await Servico.AdicionarAsync(contexto, endereco);
+            return await Servico.AdicionarAsync(endereco);
         }
     }
 }

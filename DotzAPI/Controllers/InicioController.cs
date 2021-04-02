@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using DotzAPI.Database;
 using DotzAPI.Modelos;
@@ -26,7 +27,7 @@ namespace DotzAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var usuarioValido = await Servico.ObterPorIdAsync(contexto, usuario.Id);
+            var usuarioValido = await Servico.ObterPorIdAsync(usuario.Id);
             if(usuarioValido == null)
                 return NotFound(new { message = "Usuário inválido" });
 
@@ -51,6 +52,6 @@ namespace DotzAPI.Controllers
         [HttpGet]
         [Route("autenticado")]
         [Authorize]
-        public string Autenticado() => String.Format("Autenticado! Bem vindo, {0}", User.Identity.Name);
+        public string Autenticado() => String.Format("Autenticado! Bem vindo, {0} ({1})", User.Identity.Name, User.FindFirst(ClaimTypes.Email)?.Value);
     }
 }
