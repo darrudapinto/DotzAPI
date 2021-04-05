@@ -3,14 +3,16 @@ using System;
 using DotzAPI.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DotzAPI.Migrations
 {
     [DbContext(typeof(AplicacaoDbContexto))]
-    partial class AplicacaoDbContextoModelSnapshot : ModelSnapshot
+    [Migration("20210403012608_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -203,11 +205,9 @@ namespace DotzAPI.Migrations
 
             modelBuilder.Entity("DotzAPI.Modelos.PontoDotz", b =>
                 {
-                    b.HasOne("DotzAPI.Modelos.Usuario", "Usuario")
+                    b.HasOne("DotzAPI.Modelos.Usuario", null)
                         .WithMany("PontosDotz")
                         .HasForeignKey("UsuarioId");
-
-                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("DotzAPI.Modelos.Produto", b =>

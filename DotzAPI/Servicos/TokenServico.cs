@@ -19,7 +19,7 @@ namespace DotzAPI.Servicos
                 {
                     new Claim(ClaimTypes.Name, usuario.Nome.ToString()),
                     new Claim(ClaimTypes.Email, usuario.Email.ToString()),
-                    new Claim("UsuarioId", usuario.Id.ToString())
+                    new Claim("UsuarioId", usuario.UsuarioId.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddHours(2),
                 SigningCredentials = new SigningCredentials (

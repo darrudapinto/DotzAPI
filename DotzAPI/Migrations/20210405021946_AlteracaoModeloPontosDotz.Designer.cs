@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DotzAPI.Migrations
 {
     [DbContext(typeof(AplicacaoDbContexto))]
-    [Migration("20210402015503_AdicionarProdutosCategoriasSubCategoriasAtualizarPontosDotz")]
-    partial class AdicionarProdutosCategoriasSubCategoriasAtualizarPontosDotz
+    [Migration("20210405021946_AlteracaoModeloPontosDotz")]
+    partial class AlteracaoModeloPontosDotz
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,21 +21,36 @@ namespace DotzAPI.Migrations
 
             modelBuilder.Entity("DotzAPI.Modelos.Categoria", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("CategoriaId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.HasKey("Id");
+                    b.HasKey("CategoriaId");
 
                     b.ToTable("Categorias");
                 });
 
+            modelBuilder.Entity("DotzAPI.Modelos.CategoriaSubcategoria", b =>
+                {
+                    b.Property<int>("CategoriaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SubcategoriaId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CategoriaId", "SubcategoriaId");
+
+                    b.HasIndex("SubcategoriaId");
+
+                    b.ToTable("CategoriaSubcategorias");
+                });
+
             modelBuilder.Entity("DotzAPI.Modelos.Endereco", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("EnderecoId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -60,14 +75,20 @@ namespace DotzAPI.Migrations
                     b.Property<int>("Numero")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("EnderecoId");
+
+                    b.HasIndex("UsuarioId")
+                        .IsUnique();
 
                     b.ToTable("Enderecos");
                 });
 
             modelBuilder.Entity("DotzAPI.Modelos.PontoDotz", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("PontoDotzId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -80,10 +101,10 @@ namespace DotzAPI.Migrations
                     b.Property<int>("TipoOperacao")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UsuarioId")
+                    b.Property<int>("UsuarioId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("PontoDotzId");
 
                     b.HasIndex("UsuarioId");
 
@@ -92,11 +113,8 @@ namespace DotzAPI.Migrations
 
             modelBuilder.Entity("DotzAPI.Modelos.Produto", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ProdutoId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CategoriaId")
                         .HasColumnType("int");
 
                     b.Property<string>("Descricao")
@@ -111,9 +129,7 @@ namespace DotzAPI.Migrations
                     b.Property<int?>("SubcategoriaId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoriaId");
+                    b.HasKey("ProdutoId");
 
                     b.HasIndex("SubcategoriaId");
 
@@ -122,29 +138,26 @@ namespace DotzAPI.Migrations
 
             modelBuilder.Entity("DotzAPI.Modelos.Subcategoria", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("SubcategoriaId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.HasKey("Id");
+                    b.HasKey("SubcategoriaId");
 
                     b.ToTable("SubCategorias");
                 });
 
             modelBuilder.Entity("DotzAPI.Modelos.Usuario", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("UsuarioId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<int?>("EnderecoId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
@@ -155,46 +168,75 @@ namespace DotzAPI.Migrations
                     b.Property<string>("Senha")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("EnderecoId");
+                    b.HasKey("UsuarioId");
 
                     b.ToTable("Usuarios");
                 });
 
-            modelBuilder.Entity("DotzAPI.Modelos.PontoDotz", b =>
-                {
-                    b.HasOne("DotzAPI.Modelos.Usuario", null)
-                        .WithMany("PontosDotz")
-                        .HasForeignKey("UsuarioId");
-                });
-
-            modelBuilder.Entity("DotzAPI.Modelos.Produto", b =>
+            modelBuilder.Entity("DotzAPI.Modelos.CategoriaSubcategoria", b =>
                 {
                     b.HasOne("DotzAPI.Modelos.Categoria", "Categoria")
-                        .WithMany()
-                        .HasForeignKey("CategoriaId");
+                        .WithMany("CategoriaSubcategorias")
+                        .HasForeignKey("CategoriaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("DotzAPI.Modelos.Subcategoria", "Subcategoria")
-                        .WithMany()
-                        .HasForeignKey("SubcategoriaId");
+                        .WithMany("CategoriaSubcategorias")
+                        .HasForeignKey("SubcategoriaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Categoria");
 
                     b.Navigation("Subcategoria");
                 });
 
-            modelBuilder.Entity("DotzAPI.Modelos.Usuario", b =>
+            modelBuilder.Entity("DotzAPI.Modelos.Endereco", b =>
                 {
-                    b.HasOne("DotzAPI.Modelos.Endereco", "Endereco")
-                        .WithMany()
-                        .HasForeignKey("EnderecoId");
+                    b.HasOne("DotzAPI.Modelos.Usuario", "Usuario")
+                        .WithOne("Endereco")
+                        .HasForeignKey("DotzAPI.Modelos.Endereco", "UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("Endereco");
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("DotzAPI.Modelos.PontoDotz", b =>
+                {
+                    b.HasOne("DotzAPI.Modelos.Usuario", "Usuario")
+                        .WithMany("PontosDotz")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("DotzAPI.Modelos.Produto", b =>
+                {
+                    b.HasOne("DotzAPI.Modelos.Subcategoria", null)
+                        .WithMany("Produtos")
+                        .HasForeignKey("SubcategoriaId");
+                });
+
+            modelBuilder.Entity("DotzAPI.Modelos.Categoria", b =>
+                {
+                    b.Navigation("CategoriaSubcategorias");
+                });
+
+            modelBuilder.Entity("DotzAPI.Modelos.Subcategoria", b =>
+                {
+                    b.Navigation("CategoriaSubcategorias");
+
+                    b.Navigation("Produtos");
                 });
 
             modelBuilder.Entity("DotzAPI.Modelos.Usuario", b =>
                 {
+                    b.Navigation("Endereco");
+
                     b.Navigation("PontosDotz");
                 });
 #pragma warning restore 612, 618

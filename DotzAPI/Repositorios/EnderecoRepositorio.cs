@@ -1,5 +1,4 @@
-﻿using System;
-using DotzAPI.Database;
+﻿using DotzAPI.Database;
 using DotzAPI.Modelos;
 
 namespace DotzAPI.Repositorios

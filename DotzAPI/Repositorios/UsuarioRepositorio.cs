@@ -14,12 +14,17 @@ namespace DotzAPI.Repositorios
 
         public async Task<Usuario> ObterPorIdAsync(int id)
         {
-            return await ObterTodos().FirstOrDefaultAsync(x => x.Id == id);
+            return await ObterTodosComEagerLoad(u => u.Endereco, u => u.PontosDotz).FirstOrDefaultAsync(x => x.UsuarioId == id);
+        }
+
+        public async Task<Usuario> ObterPorEmailAsync(string email)
+        {
+            return await ObterTodosComEagerLoad(u => u.Endereco, u => u.PontosDotz).FirstOrDefaultAsync(x => x.Email == email);
         }
 
         public async Task<List<Usuario>> ObterTodosAsync()
         {
-            return await ObterTodos().ToListAsync();
+            return await ObterTodosComEagerLoad(u => u.Endereco, u => u.PontosDotz).ToListAsync();
         }
     }
 }

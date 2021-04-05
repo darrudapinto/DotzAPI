@@ -1,19 +1,31 @@
 ﻿<Properties StartupConfiguration="{E94D463B-B200-4BEA-B7F6-3EDFBFB918D7}|Default">
   <MonoDevelop.Ide.ItemProperties.DotzAPI PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="DotzAPI/Servicos/IUsuarioServico.cs">
+    <Files>
+      <File FileName="DotzAPI/Controllers/UsuarioController.cs" Line="40" Column="36" />
+      <File FileName="DotzAPI/Servicos/UsuarioServico.cs" Line="54" Column="54" />
+      <File FileName="DotzAPI/Repositorios/RepositorioBase.cs" Line="68" Column="44" />
+      <File FileName="DotzAPI/Modelos/Usuario.cs" Line="27" Column="1" />
+      <File FileName="DotzAPI/Repositorios/UsuarioRepositorio.cs" Line="17" Column="36" />
+      <File FileName="DotzAPI/Repositorios/IUsuarioRepositorio.cs" Line="11" Column="47" />
+      <File FileName="DotzAPI/Servicos/IUsuarioServico.cs" Line="12" Column="45" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="DotzAPI" expanded="True">
             <Node name="DotzAPI" expanded="True">
-              <Node name="Dependencies" expanded="True" />
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
               <Node name="Controllers" expanded="True" />
               <Node name="Database" expanded="True" />
+              <Node name="Migrations" expanded="True" />
               <Node name="Modelos" expanded="True" />
-              <Node name="Repositorios" expanded="True">
-                <Node name="RepositorioBase.cs" selected="True" />
+              <Node name="Repositorios" expanded="True" />
+              <Node name="Servicos" expanded="True">
+                <Node name="IUsuarioServico.cs" selected="True" />
               </Node>
-              <Node name="Servicos" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -23,9 +35,7 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/darrudapinto/Projects/DotzAPI/DotzAPI/Controllers/UsuarioController.cs" relfile="DotzAPI/Controllers/UsuarioController.cs" line="58" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

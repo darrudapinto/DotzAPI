@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using DotzAPI.Database;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DotzAPI.Repositorios
 {
@@ -50,7 +53,7 @@ namespace DotzAPI.Repositorios
                 throw new ArgumentNullException($"{nameof(AdicionarAsync)} entidade não pode ser nula");
 
             try
-            {
+            {                
                 Contexto.Update(entidade);
                 await Contexto.SaveChangesAsync();
 
@@ -59,6 +62,23 @@ namespace DotzAPI.Repositorios
             catch (Exception ex)
             {
                 throw new Exception($"{nameof(entidade)} não foi atualizada: {ex.Message}");
+            }
+        }
+
+        public virtual IQueryable<TEntity> ObterTodosComEagerLoad(params Expression<Func<TEntity, object>>[] propriedadesNavegacao)
+        {
+            try
+            {
+                IQueryable<TEntity> dbQuery = Contexto.Set<TEntity>();
+
+                foreach (Expression<Func<TEntity, object>> propriedadeNavegacao in propriedadesNavegacao)
+                    dbQuery = dbQuery.Include<TEntity, object>(propriedadeNavegacao);
+
+                return dbQuery.AsNoTracking();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Não foi possível obter os usuários: {ex.Message}");
             }
         }
     }

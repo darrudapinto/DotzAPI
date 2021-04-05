@@ -27,7 +27,7 @@ namespace DotzAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var usuarioValido = await Servico.ObterPorIdAsync(usuario.Id);
+            var usuarioValido = await Servico.ObterPorIdAsync(usuario.UsuarioId);
             if(usuarioValido == null)
                 return NotFound(new { message = "Usuário inválido" });
 

@@ -27,8 +27,10 @@ namespace DotzAPI
         {
             string conexaoMysql = Configuration.GetConnectionString("DefaultConnection");
 
-            services.AddDbContextPool<AplicacaoDbContexto>(options => options.UseMySql(conexaoMysql,
-                                                                                      ServerVersion.AutoDetect(conexaoMysql)));
+            services.AddDbContextPool<AplicacaoDbContexto>(options => options.UseMySql(conexaoMysql, ServerVersion.AutoDetect(conexaoMysql)));
+
+            services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
             services.AddCors();
             services.AddControllers();
 
@@ -57,6 +59,8 @@ namespace DotzAPI
             services.AddTransient<IUsuarioServico, UsuarioServico>();
             services.AddTransient<IEnderecoRepositorio, EnderecoRepositorio>();
             services.AddTransient<IEnderecoServico, EnderecoServico>();
+            services.AddTransient<IPontoDotzRepositorio, PontoDotzRepositorio>();
+            services.AddTransient<IPontoDotzServico, PontoDotzServico>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DotzAPI", Version = "v1" });

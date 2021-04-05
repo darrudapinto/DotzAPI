@@ -1,8 +1,12 @@
-﻿namespace DotzAPI.Modelos
+﻿using System.Collections.Generic;
+
+namespace DotzAPI.Modelos
 {
     public class Categoria
     {
-        public int Id { get; set; }
-        public string Nome { get; set; }        
+        public int CategoriaId { get; set; }
+        public string Nome { get; set; }
+
+        public IList<CategoriaSubcategoria> CategoriaSubcategorias { get; set; }
     }
 }

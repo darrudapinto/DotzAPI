@@ -9,7 +9,9 @@ namespace DotzAPI.Servicos
     {
         Task<List<Usuario>> ObterTodosAsync();
         Task<Usuario> ObterPorIdAsync(int id);
+        Task<Usuario> ObterPorEmailAsync(string email);
         Task<Usuario> AdicionarAsync(Usuario usuario);
-        Task<Usuario> AdicionarEnderecoAsync(Endereco endereco, int id);
+        Task<Usuario> AdicionarEnderecoAsync(Endereco endereco, string email);
+        Task<Usuario> AdicionarPontoDotzAsync(PontoDotz pontoDotz, string email);
     }
 }

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using DotzAPI.Database;
 using DotzAPI.Modelos;
 using DotzAPI.Servicos;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DotzAPI.Controllers
@@ -30,6 +26,20 @@ namespace DotzAPI.Controllers
             return await Servico.ObterTodosAsync();
         }
 
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<ActionResult<Usuario>> Get([FromRoute] int id)
+        {
+            return await Servico.ObterPorIdAsync(id);
+        }
+
+        [HttpGet]
+        [Route("obterPorEmail")]
+        public async Task<ActionResult<Usuario>> Get(string email)
+        {
+            return await Servico.ObterPorEmailAsync(email);
+        }
+
         [HttpPost]
         [Route("adicionar")]
         public async Task<ActionResult<Usuario>> Post([FromBody] Usuario usuario)
@@ -48,9 +58,20 @@ namespace DotzAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            int.TryParse(User.FindFirst("UsuarioId")?.Value, out var usuarioLogadoId);
-            
-            return await Servico.AdicionarEnderecoAsync(endereco, usuarioLogadoId);
+            var usuarioLogadoEmail = User.FindFirst(ClaimTypes.Email)?.Value;
+            return await Servico.AdicionarEnderecoAsync(endereco, usuarioLogadoEmail);
+        }
+
+        [HttpPost]
+        [Route("adicionar/pontoDotz")]
+        [Authorize]
+        public async Task<ActionResult<Usuario>> Post([FromBody] PontoDotz pontoDotz)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var usuarioLogadoEmail = User.FindFirst(ClaimTypes.Email)?.Value;
+            return await Servico.AdicionarPontoDotzAsync(pontoDotz, usuarioLogadoEmail);
         }
     }
 }

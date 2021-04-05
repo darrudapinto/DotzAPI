@@ -8,6 +8,8 @@
 /Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/DotzAPI.pdb
 /Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/Humanizer.dll
 /Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 /Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.dll
 /Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Abstractions.dll
 /Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Design.dll
@@ -20,6 +22,8 @@
 /Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/Microsoft.IdentityModel.Tokens.dll
 /Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/Microsoft.OpenApi.dll
 /Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/MySqlConnector.dll
+/Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/Newtonsoft.Json.dll
+/Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/Newtonsoft.Json.Bson.dll
 /Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/Pomelo.EntityFrameworkCore.MySql.dll
 /Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/darrudapinto/Projects/DotzAPI/DotzAPI/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
