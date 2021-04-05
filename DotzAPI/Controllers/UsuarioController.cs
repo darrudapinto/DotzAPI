@@ -21,6 +21,7 @@ namespace DotzAPI.Controllers
 
         [HttpGet]
         [Route("")]
+        [Authorize]
         public async Task<ActionResult<List<Usuario>>> Get()
         {
             return await Servico.ObterTodosAsync();
@@ -28,6 +29,7 @@ namespace DotzAPI.Controllers
 
         [HttpGet]
         [Route("{id}")]
+        [Authorize]
         public async Task<ActionResult<Usuario>> Get([FromRoute] int id)
         {
             return await Servico.ObterPorIdAsync(id);
@@ -35,6 +37,7 @@ namespace DotzAPI.Controllers
 
         [HttpGet]
         [Route("obterPorEmail")]
+        [Authorize]
         public async Task<ActionResult<Usuario>> Get(string email)
         {
             return await Servico.ObterPorEmailAsync(email);
